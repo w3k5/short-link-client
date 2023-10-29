@@ -29,7 +29,7 @@ export const GenerateLinkForm = () => {
     const onSubmit = (generateLinkDto: GenerateLintDto) => {
         mutate(generateLinkDto, {
             onSuccess: ({ alias }) => {
-                const apiRoot: string = import.meta.env.VITE_API_URL;
+                const apiRoot: string = import.meta.env.VITE_API_URL ?? 'https://www.ruurl.ru';
                 setValue(`${apiRoot}/${alias}`);
             },
             onError: (error: AxiosError<any>) => {
