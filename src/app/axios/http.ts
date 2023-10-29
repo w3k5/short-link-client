@@ -8,7 +8,7 @@ const source = cancelToken.source();
 /**
  * Для работы с локальным бэкендом
  */
-export const BASE_URL = import.meta.env.VITE_API_URL || 'ruurl.ru';
+export const BASE_URL = import.meta.env.VITE_API_URL || 'https://www.ruurl.ru';
 /**
  * Для работы с бэкендом на севере
  */
