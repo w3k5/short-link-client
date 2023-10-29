@@ -1,10 +1,10 @@
 services:
-  lukomorie:
+  short-url-client:
     build: .
-    container_name: lukomorie
+    container_name: short-url-client
     network_mode: bridge
     environment:
-      VIRTUAL_HOST: lukomorie.weksik.ru
+      VIRTUAL_HOST: short-url-client.demo.weksik.ru
       VIRTUAL_PORT: 80
-      LETSENCRYPT_HOST: lukomorie.weksik.ru
-      LETSENCRYPT_EMAIL: w3k5@yandex.ru
+      LETSENCRYPT_HOST: short-url-client.demo.weksik.ru
+      LETSENCRYPT_EMAIL: ssl@weksik.ru

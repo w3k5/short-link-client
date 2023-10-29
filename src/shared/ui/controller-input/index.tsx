@@ -6,7 +6,8 @@ import type { FieldValues, UseControllerProps } from 'react-hook-form';
 import { Controller } from 'react-hook-form';
 
 interface GenericInputProperties<T extends FieldValues> extends UseControllerProps<T> {
-    label: string;
+    label?: string;
+    placeholder?: string;
     suffixElement?: ReactNode;
     prefixElement?: ReactNode;
     disabled?: boolean;
@@ -20,6 +21,7 @@ export const ControllerInput = <T extends FieldValues>({
     disabled,
     suffixElement,
     prefixElement,
+    placeholder,
 }: GenericInputProperties<T> & InputProps) => {
     return (
         <Controller
@@ -28,16 +30,24 @@ export const ControllerInput = <T extends FieldValues>({
             render={({ field, fieldState: { invalid, error } }) => {
                 return (
                     <FormControl isInvalid={!!error}>
-                        <FormLabel
-                            _invalid={{
-                                color: 'red.300',
-                            }}
-                        >
-                            {label}
-                        </FormLabel>
+                        {label && (
+                            <FormLabel
+                                _invalid={{
+                                    color: 'red.300',
+                                }}
+                            >
+                                {label}
+                            </FormLabel>
+                        )}
                         <InputGroup>
                             {prefixElement}
-                            <Input type={type} isInvalid={invalid} {...field} disabled={disabled} />
+                            <Input
+                                type={type}
+                                isInvalid={invalid}
+                                placeholder={placeholder}
+                                {...field}
+                                disabled={disabled}
+                            />
                             {suffixElement}
                         </InputGroup>
                         <FormErrorMessage>{error?.message}</FormErrorMessage>
