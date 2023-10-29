@@ -1,0 +1,10 @@
+services:
+  lukomorie:
+    build: .
+    container_name: lukomorie
+    network_mode: bridge
+    environment:
+      VIRTUAL_HOST: lukomorie.weksik.ru
+      VIRTUAL_PORT: 80
+      LETSENCRYPT_HOST: lukomorie.weksik.ru
+      LETSENCRYPT_EMAIL: w3k5@yandex.ru

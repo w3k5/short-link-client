@@ -1,0 +1,6 @@
+@import './common/reset';
+@import "./variables/global";
+
+.app {
+	font-family: var(--font-family-main);
+}
