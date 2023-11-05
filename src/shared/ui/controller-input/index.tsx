@@ -7,7 +7,6 @@ import { Controller } from 'react-hook-form';
 
 interface GenericInputProperties<T extends FieldValues> extends UseControllerProps<T> {
     label?: string;
-    placeholder?: string;
     suffixElement?: ReactNode;
     prefixElement?: ReactNode;
     disabled?: boolean;
